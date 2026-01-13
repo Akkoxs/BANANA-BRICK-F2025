@@ -32,7 +32,7 @@ public class Projectile : MonoBehaviour
         harpoonAnimator.SetBool("fly", true);
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (isMoving && !isStuck)
         {
@@ -46,7 +46,7 @@ public class Projectile : MonoBehaviour
             }
            
             float currentSpeed = rb.linearVelocity.magnitude;
-            float newSpeed = currentSpeed - (waterDrag * Time.deltaTime);
+            float newSpeed = currentSpeed - (waterDrag * Time.fixedDeltaTime);
 
             if (newSpeed <= minVelocity)
             {

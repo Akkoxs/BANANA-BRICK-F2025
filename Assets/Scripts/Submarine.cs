@@ -72,7 +72,6 @@ public class Submarine : MonoBehaviour
         Vector2 input = context.ReadValue<Vector2>();
         horizontal = input.x;
         vertical = input.y;
-        Debug.Log("submarine moves!!!");
     }
 
     public void Fire(InputAction.CallbackContext context)
@@ -80,7 +79,6 @@ public class Submarine : MonoBehaviour
         if (context.performed && playerInside)
         {
             mouseAiming.TriggerShoot(true);
-            Debug.Log("submarine shoots!!!");
         }
     }
     #endregion
